@@ -1,4 +1,4 @@
-# EMMI Emissions Analysis Application
+# EcoTrack Analysis Application
 
 This application is designed to calculate and analyze carbon emissions based on customer investments across various funds. It allows users to upload portfolio, public equity, and fixed income data files to generate detailed emissions reports and insights. The app includes data validation and visualizations to help users better understand their emissions footprint.
 
