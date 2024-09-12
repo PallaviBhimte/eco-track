@@ -19,7 +19,10 @@ def validate_data_types(df, column_types, file_type):
         duplicates = df[df.duplicated('Holding Identifier', keep=False)]
         if not duplicates.empty:
             # Remove duplicates, keeping the first occurrence
-            df = df.drop_duplicates(subset='Holding Identifier', keep='first')
+            # df = df.drop_duplicates(subset='Holding Identifier', keep='first')
+            # Remove duplicates, all occurrences
+            df = df[df.duplicated(subset='Holding Identifier', keep=False) == False].reset_index(drop=True)
+            st.dataframe(df)
             st.warning(f"Warning: Found duplicate 'Holding Identifiers' in file: {file_type}. Refer to the table below for the holding identifiers rows that were removed from the analysis.")
             st.dataframe(duplicates)
 
