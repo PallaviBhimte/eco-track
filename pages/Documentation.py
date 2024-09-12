@@ -1,17 +1,17 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="EMMI | Documentation"
+    page_title="EcoTrack | Documentation"
 )
 
 st.title("Documentation")
 
 st.write("""
-   # EMMI Emissions Analysis
+   # EcoTrack Emissions Analysis
 
    ## Overview
 
-   The **EMMI Emissions Analysis** Streamlit app provides a comprehensive platform for analyzing carbon emissions based on customer investments across various funds. It allows users to upload data files, calculate emissions, and visualize results to gain insights into their investment impacts.
+   The **EcoTrack Emissions Analysis** Streamlit app provides a comprehensive platform for analyzing carbon emissions based on customer investments across various funds. It allows users to upload data files, calculate emissions, and visualize results to gain insights into their investment impacts.
 
    ---
 

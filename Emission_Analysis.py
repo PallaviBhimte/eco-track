@@ -8,7 +8,7 @@ global output_file
 
 # Page title 
 st.set_page_config(
-    page_title="EMMI | Emissions Analysis"
+    page_title="EcoTrack | Emissions Analysis"
 )
 
 # Initialize session state for file upload tracking
@@ -19,7 +19,7 @@ if 'file_upload_status' not in st.session_state:
 if 'allow_submit' not in st.session_state:
     st.session_state['allow_submit'] = False
 
-st.title("EMMI Emissions Analysis")
+st.title("EcoTrack Emissions Analysis")
 st.subheader("YOUR NET ZERO INVESTOR TOOLKIT")
 st.sidebar.header("Upload Files")
 
@@ -38,6 +38,7 @@ def upload_portfolio_excel_file():
         portfolio_df = pd.read_excel(portfolio_file)
         if validate_columns(portfolio_df, required_columns['Portfolio'], 'Portfolio.xlsx'):
             st.session_state['file_upload_status']['portfolio'] = True
+            st.session_state['allow_submit'] = False
         else:
             st.session_state['file_upload_status']['portfolio'] = False
     else:
@@ -51,6 +52,7 @@ def upload_public_equity_excel_file():
         public_equity_df = pd.read_excel(public_equity_file)
         if validate_columns(public_equity_df, required_columns['PublicEquity'], 'PublicEquity.xlsx'):
             st.session_state['file_upload_status']['public_equity'] = True
+            st.session_state['allow_submit'] = False
         else:
             st.session_state['file_upload_status']['public_equity'] = False
     else:
@@ -64,6 +66,7 @@ def upload_fixed_income_excel_file():
         fixed_income_df = pd.read_excel(fixed_income_file)
         if validate_columns(fixed_income_df, required_columns['FixedIncome'], 'FixedIncome.xlsx'):
             st.session_state['file_upload_status']['fixed_income'] = True
+            st.session_state['allow_submit'] = False
         else:
             st.session_state['file_upload_status']['fixed_income'] = False
     else:
